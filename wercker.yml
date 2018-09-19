@@ -1,6 +1,6 @@
 box: node
 
-build-test:
+build-sit:
   steps: 
     # A step that executes `npm install` command
     - npm-install
@@ -14,7 +14,7 @@ build-test:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
-push-release-test:
+push-release-sit:
   steps:
     - internal/docker-push:
         username: $DOCKER_USERNAME
