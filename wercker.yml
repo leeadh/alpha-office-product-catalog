@@ -1,6 +1,6 @@
 box: node
 
-build:
+build-prod:
   steps: 
     # A step that executes `npm install` command
     - npm-install
@@ -14,7 +14,7 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
-push-release:
+push-releaseprod:
   steps:
     - internal/docker-push:
         username: $DOCKER_USERNAME
@@ -43,7 +43,7 @@ inject-secret:
         insecure-skip-tls-verify: true
         command: delete secret wercker; echo delete registry secret
 
-deploy-to-cluster:
+deploy-to-clusterprod:
     box:
         id: alpine
         cmd: /bin/sh
