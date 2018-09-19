@@ -21,7 +21,7 @@ push-releasetest:
         password: $DOCKER_PASSWORD
         repository: $DOCKER_REPO_TEST
         registry: $DOCKER_REGISTRY
-        tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
+        tag: "latest"
         working-dir: /pipeline/source
         ports: $PORT
         env: PORT=$PORT
